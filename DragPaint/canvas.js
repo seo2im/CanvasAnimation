@@ -6,11 +6,12 @@ let isDown = false;
 let points = [];
 
 const Draw = () => {
-	
+	ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight)
+
 	points = points.map(point => {
 		let {x, y, hw, hh, ratio} = point;
 		ctx.translate(x, y);
-		ctx.clearRect(-hw - 0.5, -hh - 0.5, 2 * hw + 1, 2 * hh + 1)
+		//ctx.clearRect(-hw - 0.5, -hh - 0.5, 2 * hw + 1, 2 * hh + 1)
 		ctx.scale(ratio, ratio);
 		ctx.fillRect(-hw, - hh, 2 * hw, 2 * hh);
 		ctx.scale(1 / ratio, 1 / ratio);
@@ -21,6 +22,7 @@ const Draw = () => {
 		return {...point, ratio : ratio}
 	}).filter(e => e !== null)
 }
+
 
 canvas.onmousedown = (event) => {
 	isDown = true;
