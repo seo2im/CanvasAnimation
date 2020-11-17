@@ -23,7 +23,7 @@ function Anim () {
 }
 
 canvas.addEventListener('click', function (event) {
-	points.push({x : event.pageX, y : event.pageY, w : 20, h : 20})
+	points.push({x : event.offsetX, y : event.offsetY, w : 20, h : 20})
 })
 
 interval = setInterval(Anim, 100);
