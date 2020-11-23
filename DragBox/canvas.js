@@ -25,7 +25,7 @@ ctx.fillRect(prePos.x, prePos.y, prePos.w, prePos.h);
 
 setInterval(() => {
 	if (prePos.x !== nextPos.x && prePos.y !== nextPos.y){
-		ctx.clearRect(prePos.x, prePos.y, prePos.w, prePos.y);
+		ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 		ctx.fillRect(nextPos.x, nextPos.y, nextPos.w, nextPos.h);
 		prePos = {...nextPos};
 	}

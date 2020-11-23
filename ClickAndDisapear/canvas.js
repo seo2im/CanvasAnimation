@@ -5,10 +5,10 @@ let points = [];
 let id = -1;
 
 function Anim () {
+	ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 	points = points.map(point => {
 		let {x, y, w, h} = point;
 		
-		ctx.clearRect(x, y, w + 1, h + 1);
 		w = w < 0.5 ? 0 : w * 0.9;
 		h = h < 0.5 ? 0 : h * 0.9;
 
